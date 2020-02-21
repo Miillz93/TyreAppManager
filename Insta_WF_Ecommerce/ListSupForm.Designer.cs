@@ -28,18 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dGVSupplier = new System.Windows.Forms.DataGridView();
+            this.cMSSupplier = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).BeginInit();
+            this.cMSSupplier.SuspendLayout();
             this.SuspendLayout();
             // 
             // dGVSupplier
             // 
             this.dGVSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVSupplier.ContextMenuStrip = this.cMSSupplier;
             this.dGVSupplier.Location = new System.Drawing.Point(71, 92);
             this.dGVSupplier.Name = "dGVSupplier";
             this.dGVSupplier.Size = new System.Drawing.Size(648, 318);
             this.dGVSupplier.TabIndex = 0;
+            // 
+            // cMSSupplier
+            // 
+            this.cMSSupplier.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.cMSSupplier.Name = "cMSSupplier";
+            this.cMSSupplier.Size = new System.Drawing.Size(181, 70);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -59,7 +87,9 @@
             this.Controls.Add(this.dGVSupplier);
             this.Name = "ListSupForm";
             this.Text = "ListSupForm";
+            this.Load += new System.EventHandler(this.ListSupForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).EndInit();
+            this.cMSSupplier.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,5 +99,8 @@
 
         private System.Windows.Forms.DataGridView dGVSupplier;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip cMSSupplier;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

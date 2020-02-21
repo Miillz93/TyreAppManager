@@ -15,6 +15,7 @@ namespace Insta_WF_Ecommerce
     public partial class ListConsForm : Form
     {
         ConnectionStringSettings cnx = ConfigurationManager.ConnectionStrings["EcomProject"];
+
         public ListConsForm()
         {
             InitializeComponent();
@@ -56,12 +57,50 @@ namespace Insta_WF_Ecommerce
         {
             String idSupplier = dGVConsumer.CurrentRow.Cells[0].Value.ToString();
             int id = int.Parse(idSupplier);
-            //MessageBox.Show(idSupplier);
             UpdateConsumerForm uCF = new UpdateConsumerForm(id);
             uCF.Show();
 
-            //textbox1.Text = dataGridViewP.CurrentRow.Cells[0].Value.ToString();
-            //textbox2.Text = dataGridViewP.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        public String deleteConsumer(int id)
+        {
+            String value = $"DELETE FROM Consumer WHERE idConsumer = {id}";
+            return value;
+        }
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String idSupplier = dGVConsumer.CurrentRow.Cells[0].Value.ToString();
+            int id = int.Parse(idSupplier);
+            using (var connection = new SqlConnection(cnx.ConnectionString))
+            {
+                String queryString = deleteConsumer(id);
+                connection.Open();
+                var dCmd = new SqlCommand(queryString, connection);
+                dCmd.CommandType = CommandType.Text;
+
+                DialogResult result = MessageBox.Show("Mon Message ?", "Important ", MessageBoxButtons.YesNoCancel,
+MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    dCmd.ExecuteNonQuery();
+                    connection.Close();
+                    //MessageBox.Show(result.ToString());
+                }else if (result == DialogResult.No)
+                {
+                    MessageBox.Show(result.ToString());
+                } else {
+                    MessageBox.Show(result.ToString());
+                }
+                
+                ListConsForm_Load(sender, e);
+
+                //this.Update();
+                //this.Refresh();
+                //dGVConsumer.Update();
+                //dGVConsumer.Refresh();
+                //dGVConsumer.Invalidate();
+
+            }
         }
     }
 }

@@ -103,5 +103,10 @@ namespace Insta_WF_Ecommerce
             lS.WindowState = FormWindowState.Maximized;
             lS.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

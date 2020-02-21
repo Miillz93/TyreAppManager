@@ -42,6 +42,7 @@
             this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.displayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             // listingToolStripMenuItem
             // 
             this.listingToolStripMenuItem.Name = "listingToolStripMenuItem";
-            this.listingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listingToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.listingToolStripMenuItem.Text = "Listing";
             this.listingToolStripMenuItem.Click += new System.EventHandler(this.listingToolStripMenuItem_Click);
             // 
@@ -101,7 +102,7 @@
             // listingToolStripMenuItem1
             // 
             this.listingToolStripMenuItem1.Name = "listingToolStripMenuItem1";
-            this.listingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listingToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.listingToolStripMenuItem1.Text = "Listing";
             this.listingToolStripMenuItem1.Click += new System.EventHandler(this.listingToolStripMenuItem1_Click);
             // 
@@ -124,19 +125,21 @@
             // listingToolStripMenuItem2
             // 
             this.listingToolStripMenuItem2.Name = "listingToolStripMenuItem2";
-            this.listingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.listingToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.listingToolStripMenuItem2.Text = "Listing";
             this.listingToolStripMenuItem2.Click += new System.EventHandler(this.listingToolStripMenuItem2_Click);
             // 
             // addToolStripMenuItem2
             // 
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.addToolStripMenuItem2.Text = "Add";
             this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // displayToolStripMenuItem
             // 
+            this.displayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
             this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
             this.displayToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.displayToolStripMenuItem.Text = "Display";
@@ -145,6 +148,13 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -178,5 +188,6 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listingToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

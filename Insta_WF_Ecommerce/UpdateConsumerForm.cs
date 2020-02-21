@@ -28,9 +28,9 @@ namespace Insta_WF_Ecommerce
 
         public String getConsumerInfo(int id)
         {
-            String values = $"SELECT Lastname, Firstname, DeliveryAddress, BillingAddress " +
+            String value = $"SELECT Lastname, Firstname, DeliveryAddress, BillingAddress " +
                 $"FROM Consumer Where idConsumer={id}";
-            return values;
+            return value;
         }
 
         private void UpdateConsumerForm_Load(object sender, EventArgs e)
@@ -71,11 +71,29 @@ namespace Insta_WF_Ecommerce
                 connection.Open();
                 var dCmd = new SqlCommand(queryString, connection);
                 dCmd.CommandType = CommandType.Text;
-                dCmd.ExecuteNonQuery();
-                connection.Close();
-                this.Close();
+
+                try
+                {
+                    //dCmd.Parameters.AddWithValue("idConsumer", this.id);
+                    dCmd.ExecuteNonQuery(); ;
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    dCmd.Dispose();
+                    connection.Close();
+                    connection.Dispose();
+                    this.Close();
+                }
+                //dCmd.ExecuteNonQuery();
+                //connection.Close();
                 
             }
+
+
+          
         }
     }
 }
